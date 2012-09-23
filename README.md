@@ -1,0 +1,1 @@
+Applications Management Data Base in Ruby on Rails. An application to get control of your applications, where are installed, where you bought them or download them.
