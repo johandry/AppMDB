@@ -16,6 +16,15 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+  <%= f.label :category %><br />
+  <%= f.collection_select(:category_id, @categories, :id, :name, :include_blank => "Please select") %>
+<!--
+  <%= select 'app', 'category', 
+    @categories.collect {|c| [c.name, c.id]}, 
+    :prompt => "Select a Category" %>
+-->
+  </div>
+  <div class="field">
     <%= f.label :path %><br />
     <%= f.text_field :path %>
   </div>

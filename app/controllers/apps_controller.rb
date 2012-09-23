@@ -25,6 +25,7 @@ class AppsController < ApplicationController
   # GET /apps/new.json
   def new
     @app = App.new
+    @categories = Category.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class AppsController < ApplicationController
   # GET /apps/1/edit
   def edit
     @app = App.find(params[:id])
+    @categories = Category.find(:all)
   end
 
   # POST /apps

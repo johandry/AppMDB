@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Category</th>
     <th>Path</th>
     <th>Url</th>
     <th>My version</th>
@@ -17,6 +18,7 @@
 <% @apps.each do |app| %>
   <tr>
     <td><%= app.name %></td>
+    <td><%= app.category.name %></td>
     <td><%= app.path %></td>
     <td><%= app.url %></td>
     <td><%= app.my_version %></td>

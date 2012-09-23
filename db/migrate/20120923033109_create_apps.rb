@@ -8,8 +8,12 @@ class CreateApps < ActiveRecord::Migration
       t.string :version
       t.text :description
       t.text :comments
+      
+      t.references :category
 
       t.timestamps
     end
+    
+    add_index :apps, :category_id
   end
 end

@@ -1,5 +1,8 @@
 AppMDB::Application.routes.draw do
-  resources :apps
+  resources :apps 
+  resources :categories do
+    resources :apps
+  end
 
   get "home/index"
 
