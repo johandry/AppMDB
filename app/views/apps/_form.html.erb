@@ -1,54 +1,56 @@
-<%= form_for(@app) do |f| %>
-  <% if @app.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@app.errors.count, "error") %> prohibited this app from being saved:</h2>
-
-      <ul>
-      <% @app.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @app, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :path, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :path, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :url, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :my_version, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :my_version, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :version, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :version, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :comments, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :comments, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :category_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :category_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-  <%= f.label :category %><br />
-  <%= f.collection_select(:category_id, @categories, :id, :name, :include_blank => "Please select") %>
-<!--
-  <%= select 'app', 'category', 
-    @categories.collect {|c| [c.name, c.id]}, 
-    :prompt => "Select a Category" %>
--->
-  </div>
-  <div class="field">
-    <%= f.label :path %><br />
-    <%= f.text_field :path %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :my_version %><br />
-    <%= f.text_field :my_version %>
-  </div>
-  <div class="field">
-    <%= f.label :version %><br />
-    <%= f.text_field :version %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :comments %><br />
-    <%= f.text_area :comments %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                apps_path, :class => 'btn' %>
   </div>
 <% end %>
