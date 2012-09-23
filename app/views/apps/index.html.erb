@@ -7,13 +7,13 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:category_id) %></th>
       <th><%= model_class.human_attribute_name(:path) %></th>
       <th><%= model_class.human_attribute_name(:url) %></th>
       <th><%= model_class.human_attribute_name(:my_version) %></th>
       <th><%= model_class.human_attribute_name(:version) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:comments) %></th>
-      <th><%= model_class.human_attribute_name(:category_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -23,13 +23,13 @@
       <tr>
         <td><%= link_to app.id, app_path(app) %></td>
         <td><%= app.name %></td>
+        <td><%= app.category.name %></td>
         <td><%= app.path %></td>
         <td><%= app.url %></td>
         <td><%= app.my_version %></td>
         <td><%= app.version %></td>
         <td><%= app.description %></td>
         <td><%= app.comments %></td>
-        <td><%= app.category_id %></td>
         <td><%=l app.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

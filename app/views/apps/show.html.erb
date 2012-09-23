@@ -6,20 +6,20 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @app.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:path) %>:</strong></dt>
-  <dd><%= @app.path %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
-  <dd><%= @app.url %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:my_version) %>:</strong></dt>
-  <dd><%= @app.my_version %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:version) %>:</strong></dt>
-  <dd><%= @app.version %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @app.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
-  <dd><%= @app.comments %></dd>
   <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
-  <dd><%= @app.category_id %></dd>
+  <dd>.<%= @app.category.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:path) %>:</strong></dt>
+  <dd>.<%= @app.path %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
+  <dd>.<%= @app.url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:my_version) %>:</strong></dt>
+  <dd>.<%= @app.my_version %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:version) %>:</strong></dt>
+  <dd>.<%= @app.version %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd>.<%= @app.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
+  <dd>.<%= @app.comments %></dd>
 </dl>
 
 <div class="form-actions">
